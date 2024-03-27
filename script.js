@@ -52,6 +52,10 @@ const categoryCssClasses = {
                 <div class="description">${product.description}</div>
             </div>`;
             listContainer.appendChild(productContainer);
+            productContainer.addEventListener("click", () => {
+                localStorage.setItem ("productId", product.id);
+                window.location.href = "./product_page.html";
+            }); 
         }
     });
 
@@ -60,3 +64,4 @@ const categoryCssClasses = {
         const products = await response.json();
         return products;
     }
+
